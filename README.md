@@ -14,7 +14,7 @@ Título:Tienda Virtual de Productos tecnologicos (MAX SHOP)
 - Tecnologías Usadas: HTML5, CSS3.
 - Link a gh pages: [MAXSHOP](https://ucc-labcompu2.github.io/proyecto2022-hernandez-marabotto/)
 
-Contenido de la pagina: Es un simulador para hacer carreras entre dos autos usando como datos iniciales los caballos de fuerza y el peso del vehiculo
+Contenido de la pagina: Es una tienda virtual,donde se puede encontrar variedad de productos para computadora.
 ## Requisitos del Primer Parcial
 
 ### Sobre el Repositorio
