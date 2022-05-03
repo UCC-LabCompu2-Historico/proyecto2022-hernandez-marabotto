@@ -87,7 +87,7 @@ header a{
     font-size: 16px;
     border-radius: 5px 0 0 5px;
 }
-.navigation ul .search-icon .icon{   
+.navigation ul .search-icon .icon{
     cursor: pointer;
 }
 .navigation ul .search-icon .icon span{
@@ -181,10 +181,12 @@ main{
 /*slider*/
 .slider{
     padding-top: 4rem;
-    width: 100%;
+    width: 40%;
+    height: 10cm;
     margin: auto;
     overflow: hidden;
 }
+
 .slider ul{
     display:flex;
     padding: 0;
@@ -221,7 +223,7 @@ main{
 }
 .container-imagen{
     width: 33%;
-    display:inline-block; 
+    display:inline-block;
     align-items: center;
     flex-direction: column;
     text-align:center;
@@ -256,7 +258,7 @@ main{
     padding: 6rem 0;
 }
 .container-contacto form{
-   
+
     width: 450px;
     margin:auto;
     background:rgba(0,0,0,0.4);
@@ -264,7 +266,7 @@ main{
     box-sizing: border-box;
     margin-top: 20px;
     border-radius: 7px;
-}  
+}
 .container-contacto form h2{
     color: #f2f2f2;
     text-align: center;
@@ -329,11 +331,13 @@ main{
 
 
 /*productos-card*/
+
 .container-productos{
     width: 100%;
     max-width: 1200px;
     height: auto;
     display: flex;
+    background: white;
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
@@ -368,12 +372,13 @@ main{
 .container-productos .card p{
     padding-top: 5px;
 }
-.container-productos .card a{
-    padding:10px;
-    display: block;
-    width: 50%;
-    margin: 0 auto;
-}
+
+.container-productos .card a {
+     padding: 10px;
+     display: block;
+     width: 50%;
+     margin: 0 auto;
+ }
 
 
 /*contenido*/
@@ -419,12 +424,12 @@ main{
     padding: 10px 20px;
 }
 .container-carrito form .contenido{
-    
+
     padding: 10px 20px;
 }
 .container-carrito form .titulo{
     font-size: 20px;
-    font-weight: 200;    
+    font-weight: 200;
 }
 .container-carrito form .titulo input{
     width: 100%;
@@ -436,7 +441,7 @@ main{
     border:1px solid #4e0dd9;
 }
 #total{
-    border: 0; 
+    border: 0;
     font-weight: bold;
     font-size: 20px;
     text-align: center;
@@ -621,7 +626,7 @@ main{
     .columna2{
         width: 100%;
         float: none;
-        text-align: center;   
+        text-align: center;
     }
     .columna2 img{
         width: 300px;
@@ -633,6 +638,6 @@ main{
     }
     .tabla td, .tabla th {
         padding: .1rem;
-    }    
+    }
 
 }
