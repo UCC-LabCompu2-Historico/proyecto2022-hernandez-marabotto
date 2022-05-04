@@ -1,162 +1,168 @@
 <!doctype html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="utf-8">
-      <meta author="Simon Hernandez y Tiziano Marabotto">
-      <meta content="Web de compra de Productos Tecnologicos" name="descripcion">
-      <meta content="mouses,teclados,otros" name="palabras-principales">
+    <meta name="autor" content="Simon Hernandez y Tiziano Marabotto">
+    <meta content="Web de compra de Productos Tecnologicos" name="descripcion">
+    <meta content="mouses,teclados,otros" name="palabras-principales">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-      <link rel="shortcut icon" href="assets/img/Maxshop.ico" type="image/x-icon">
-  </head>
-  <body>
-    <header>
-      <div class="menu logo-nav">
+    <link rel="shortcut icon" href="assets/img/Maxshop.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Rubik:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="menu logo-nav">
         <a href="index.html" class="logo">MAXSHOP</a>
         <label class="menu-icon"><span class="fas fa-bars icomin"></span></label>
         <nav class="navigation">
-          <ul>
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li class="search-icon">
-              <input type="search" placeholder="Search">
-              <label class="icon">
-                <span class="fas fa-search"></span>
-              </label>
-            </li>
-            <li class="car"><a href="carrito.html" >
-              <svg class="bi bi-cart3" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-              </svg></a>
-                <div id="carrito" class="dropdown-menu">
-                  <table id="lista-carrito" class="table">
-                      <thead>
-                          <tr>
-                              <th>Imagen</th>
-                              <th>Nombre</th>
-                              <th>Precio</th>
-                              <th></th>
-                          </tr>
-                      </thead>
-                      <tbody></tbody>
-                  </table>
+            <ul>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li class="search-icon">
+                    <input type="search" placeholder="Search">
+                    <label class="icon">
+                        <span class="fas fa-search"></span>
+                    </label>
+                </li>
+                <li class="car"><a href="carrito.html">
+                    <svg class="bi bi-cart3" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                    </svg>
+                </a>
+                    <div id="carrito" class="dropdown-menu">
+                        <table id="lista-carrito" class="table">
+                            <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
 
-                  <a href="#" id="vaciar-carrito" class="button-vaciar">Vaciar Carrito</a>
-                  <a href="#" id="procesar-pedido" class="button-pedido">Procesar Compra</a>
-              </div>
-            </li>
-          </ul>
+                        <a href="#" id="vaciar-carrito" class="button-vaciar">Vaciar Carrito</a>
+                        <a href="#" id="procesar-pedido" class="button-pedido">Procesar Compra</a>
+                    </div>
+                </li>
+            </ul>
         </nav>
-      </div>
-    </header>
+    </div>
+</header>
 
 
 <main>
 
 
-        <div class="modal" id="modal">
-          <div class="modal-content">
-            <img src="" alt="" class="modal-img" id="modal-img">
-          </div>
-          <div class="modal-boton" id="modal-boton">X</div>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <img src="" alt="MODAL" class="modal-img" id="modal-img">
         </div>
+        <div class="modal-boton" id="modal-boton">X</div>
+    </div>
 
-        <div class="container-productos" id="lista-productos">
+    <div class="container-productos" id="lista-productos">
 
-          <div class="card">
-            <img src="assets/img/teclado1.png" class="card-img">
+        <div class="card">
+            <img src="assets/img/teclado1.png" class="card-img" alt="Teclado Adata">
             <h5>Teclado ADATA</h5>
             <p>$<small class="precio">18.000</small></p>
             <a href="#" class="button agregar-carrito" data-id="1">Comprar</a>
-              <p>HEORTORIWX345</p>
-          </div>
-          <div class="card">
-            <img src="assets/img/teclado2.png" class="card-img">
+            <p>HEORTORIWX345</p>
+        </div>
+        <div class="card">
+            <img src="assets/img/teclado2.png" class="card-img" alt="Teclado Logitech">
             <h5>Teclado Logitech</h5>
             <p>$<small class="precio">7500</small></p>
             <a href="#" class="button agregar-carrito" data-id="2">Comprar</a>
-              <p>WREGSD23453</p>
-          </div>
-          <div class="card">
-            <img src="assets/img/teclado3.jpg" class="card-img">
+            <p>WREGSD23453</p>
+        </div>
+        <div class="card">
+            <img src="assets/img/teclado3.jpg" class="card-img" alt="Teclado Viper">
             <h5>Teclado Viper</h5>
             <p>$<small class="precio">7290</small></p>
             <a href="#" class="button agregar-carrito" data-id="3">Comprar</a>
-              <p>QSASDSAS234</p>
-          </div>
+            <p>QSASDSAS234</p>
+        </div>
 
-          <div class="card">
-            <img src="assets/img/mouse1.jpg" class="card-img">
+        <div class="card">
+            <img src="assets/img/mouse1.jpg" class="card-img" alt="Mouse Viper">
             <h5>Mouse Viper</h5>
             <p>$<small class="precio">4939</small></p>
             <a href="#" class="button agregar-carrito" data-id="4">Comprar</a>
-              <p>ZXCVGFFV234</p>
-          </div>
-          <div class="card">
-            <img src="assets/img/mouse2.jpg" class="card-img">
+            <p>ZXCVGFFV234</p>
+        </div>
+        <div class="card">
+            <img src="assets/img/mouse2.jpg" class="card-img" alt="Mouse Hyperx">
             <h5>Mouse Hyper X</h5>
             <p>$<small class="precio">9890</small></p>
             <a href="#" class="button agregar-carrito" data-id="5">Comprar</a>
-              <p>LKOIJU234</p>
-          </div>
-          <div class="card">
-            <img src="assets/img/mouse3.jpg" class="card-img">
+            <p>LKOIJU234</p>
+        </div>
+        <div class="card">
+            <img src="assets/img/mouse3.jpg" class="card-img" alt="Mouse Red Dragon">
             <h5>Mouse Red Dragon</h5>
             <p>$<small class="precio">1890</small></p>
             <a href="#" class="button agregar-carrito" data-id="6">Comprar</a>
-              <p>LOKIJ2JU4</p>
+            <p>LOKIJ2JU4</p>
 
-          </div>
+        </div>
 
-          <div class="card">
-            <img src="assets/img/peri1.png" class="card-img">
+        <div class="card">
+            <img src="assets/img/peri1.png" class="card-img" alt="Keytabs Red Dragon">
             <h5>Keytabs Red Dragon</h5>
             <p>$<small class="precio">1890</small></p>
             <a href="#" class="button agregar-carrito" data-id="7">Comprar</a>
-              <p>ZXZXZSDCXSX</p>
-          </div>
-          <div class="card">
-            <img src="assets/img/peri2.jpg" class="card-img">
+            <p>ZXZXZSDCXSX</p>
+        </div>
+        <div class="card">
+            <img src="assets/img/peri2.jpg" class="card-img" alt="Camara Red Dragon">
             <h5>Camara Red Dragon</h5>
             <p>$<small class="precio">7890</small></p>
             <a href="#" class="button agregar-carrito" data-id="8">Comprar</a>
-              <p>ÑLOPOIJNBH</p>
-          </div>
-          <div class="card">
-            <img src="assets/img/peri3.jpg" class="card-img">
+            <p>ÑLOPOIJNBH</p>
+        </div>
+        <div class="card">
+            <img src="assets/img/peri3.jpg" class="card-img" alt="Microfono Hyperx">
             <h5>Microfono Hyper X</h5>
             <p>$<small class="precio">12000</small></p>
             <a href="#" class="button agregar-carrito" data-id="9">Comprar</a>
-              <p>VFRTGB23456</p>
-          </div>
-
+            <p>VFRTGB23456</p>
         </div>
+
+    </div>
 </main>
 
 
 <footer class="footer-section">
-  <div class="copyright-area">
-      <div class="container-footer">
-          <div class="row-footer">
-              <div class="col-xl-6 col-lg-6 text-center text-lg-left">
-                  <div class="copyright-text">
-                      <p>Copyright &copy; 2022, todos los derechos reservados <a href="index.html">MAXSHOP</a></p>
-                  </div>
-              </div>
-              <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
-                  <div class="footer-menu">
-                      <ul>
-                          <li><a href="nosotros.html">Nosotros</a></li>
-                          <li><a href="productos.html">Productos</a></li>
-                          <li><a href="contacto.html">Contacto</a></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+    <div class="copyright-area">
+        <div class="container-footer">
+            <div class="row-footer">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2022, todos los derechos reservados <a href="index.html">MAXSHOP</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="productos.html">Productos</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
 
 </body>
