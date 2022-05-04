@@ -24,7 +24,9 @@
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li class="search-icon">
-                    <input type="search" placeholder="Search">
+                    <input type="search" id="search" placeholder="Search" >
+                    <label for="search">
+                    </label>
                     <label class="icon">
                         <span class="fas fa-search"></span>
                     </label>
@@ -47,11 +49,19 @@
         <h2>CONTACTO</h2>
         <br>
         <input type="text" name="cliente" id="nombre" placeholder="Ingrese su Nombre" onpaste="return false" required>
+        <label for="nombre">
+        </label>
         <input type="text" name="correo" id="correo" placeholder="Ingrese su Correo" required>
+        <label for="correo">
+        </label>
         <input type="text" name="celular" id="celular" placeholder="Ingrese su Celular" onpaste="return false" required>
+        <label for="celular">
+        </label>
         <textarea name="mensaje" placeholder="Escriba su Mensaje" required></textarea>
         <input type="submit" id="button-contacto" value="ENVIAR" class="button"
                onclick="validarCorreo(form.correo.value)">
+        <label for="button-contacto">
+        </label>
     </form>
 </div>
 

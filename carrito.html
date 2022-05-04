@@ -11,7 +11,8 @@
     <link rel="shortcut icon" href="assets/img/Maxshop.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Rubik:wght@300&display=swap"
+          rel="stylesheet">
 </head>
 <body>
 <header>
@@ -24,7 +25,9 @@
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li class="search-icon">
-                    <input type="search" placeholder="Search">
+                    <input type="search" id="search" placeholder="Search">
+                    <label for="search">
+                    </label>
                     <label class="icon">
                         <span class="fas fa-search"></span>
                     </label>
@@ -50,6 +53,8 @@
                 <label for="cliente" class="">Cliente :</label>
                 <input type="text" class="form-control" id="cliente" name="cliente" placeholder="Ingrese su nombre"
                        keypress="return sololetras(event)" onpaste="return false" required>
+                <label for="cliente">
+                </label>
             </div>
             <div class="contenido titulo">
                 <label for="correo">Correo :</label>
@@ -88,6 +93,8 @@
                         <th colspan="4" scope="col" class="">TOTAL :</th>
                         <th scope="col">
                             <input type="text" id="total" name="monto_total" readonly>
+                            <label for="total">
+                            </label>
                         </th>
                     </tr>
                 </table>
