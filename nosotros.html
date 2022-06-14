@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Rubik:wght@300&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="draw();">
 <header>
     <div class="menu logo-nav">
         <a href="index.html" class="logo">MAXSHOP</a>
@@ -57,14 +57,14 @@
             <p>La creación de una comunidad de clientes leales ha ayudado a Max Shop a crecer y convertirse en la
                 empresa que somos ahora. No solo somos una tienda virtual, nuestra empresa y todo nuestro equipo nos
                 preocupamos y prorisamos el bienestar de nuestros clientes.</p><br>
-            <canvas id="canva_Grafico_Estadistico">
-                El navegador no soporta canvas
-            </canvas>
+
+
         </div>
         <div class="columna2">
-            <img src="assets/img/nosotros.jpg" alt="MEME ;)">
+            <canvas id="canvas" width="730" height="200"></canvas>
         </div>
     </div>
+
 </main>
 
 <footer class="footer-section">

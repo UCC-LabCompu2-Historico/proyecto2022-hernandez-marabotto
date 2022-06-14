@@ -138,3 +138,31 @@ function validar(){
         return false;
     }
 }
+
+function draw() {
+    var canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "rgb(75,0,130)";
+        ctx.fillRect (10, 10, 1000, 50);
+
+        ctx.fillStyle = "rgb(0, 0, 255)";
+        ctx.fillRect (30, 30, 1000, 50);
+
+        ctx.fillStyle = "rgb(0,255,0)";
+        ctx.fillRect (50, 50, 1000, 50);
+
+        ctx.fillStyle = "rgb(255,255,0)";
+        ctx.fillRect (70, 70, 1000, 50);
+
+        ctx.fillStyle = "rgb(0,204,108)";
+        ctx.fillRect (90, 90, 1000, 50);
+
+        ctx.fillStyle = "rgb(255,127,0)";
+        ctx.fillRect (110, 110, 1000, 50);
+
+        ctx.fillStyle = "rgb(255,0,0)";
+        ctx.fillRect (130, 130, 1000, 50);
+    }
+}
