@@ -455,13 +455,13 @@ main {
     padding-left: 25px;
     text-align: center;
 }
-
-.columna2 {
-    width: 10%;
+.columna2{
+     width: 40%;
     float: right;
 }
-
-
+.columna2 img{
+    width: 450px;
+}
 
 /*carrito*/
 #cargando {
