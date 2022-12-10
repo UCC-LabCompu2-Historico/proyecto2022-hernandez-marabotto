@@ -139,6 +139,77 @@ function validar(){
     }
 }
 
+// Configuracion de grafico de lineas
+
+    const totalDuration = 10000;
+    const delayBetweenPoints = totalDuration / data.length;
+    const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
+    const data = [];
+    const data2 = [];
+    let prev = 100;
+    let prev2 = 80;
+    for (let i = 0; i < 1000; i++) {
+    prev += 5 - Math.random() * 10;
+    data.push({x: i, y: prev});
+    prev2 += 5 - Math.random() * 10;
+    data2.push({x: i, y: prev2});
+}
+    var ctx= document.getElementById("grafico").getContext("2d");
+    var grafico= new Chart(ctx,{
+    type: 'linea',
+    data: {
+    datasets: [{
+    borderColor: 'rgb(51, 156, 255 )',
+    borderWidth: 1,
+    radius: 0,
+    data: data,
+},
+{
+    borderColor: 'rgb(233, 236, 27 )',
+    borderWidth: 1,
+    radius: 0,
+    data: data2,
+}]
+},
+    options:{
+    animation,
+    interaction: {
+    intersect: false
+},
+    plugins: {
+    legend: false
+},
+    scales: {
+    x: {
+    type: 'numero',
+    easing: 'alinear',
+    duration: delayBetweenPoints,
+    from: NaN, // the point is initially skipped
+    delay(ctx) {
+    if (ctx.type !== 'data' || ctx.xStarted) {
+    return 0;
+}
+    ctx.xStarted = true;
+    return ctx.index * delayBetweenPoints;
+}
+},
+    y: {
+    type: 'numero',
+    easing: 'alinear',
+    duration: delayBetweenPoints,
+    from: previousY,
+    delay(ctx) {
+    if (ctx.type !== 'data' || ctx.yStarted) {
+    return 0;
+}
+    ctx.yStarted = true;
+    return ctx.index * delayBetweenPoints;
+}
+}
+}
+},
+});
+
 function draw() {
     var canvas = document.getElementById("canvas");
     if (canvas.getContext) {
@@ -166,3 +237,4 @@ function draw() {
         ctx.fillRect (130, 130, 1000, 50);
     }
 }
+
