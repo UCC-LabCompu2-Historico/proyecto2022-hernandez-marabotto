@@ -391,6 +391,7 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
+
 }
 
 .container-productos .card {
@@ -498,7 +499,7 @@ main {
     box-sizing: border-box;
     font-size: 17px;
     border-radius: 8px;
-    border: 1px solid #4e0dd9;
+    border: 1px solid #2c89d9;
 }
 
 #total {
@@ -735,6 +736,13 @@ caption{
 }
 h2 {
     font-family: 'Roboto','Rubik', sans-serif;
+}
 
+#myCanvas {
+    margin:  auto;
+    border-width: 5px;
+    border-style: dashed;
+    border-color: rgba(20, 126, 239, 0.50)
 
 }
+

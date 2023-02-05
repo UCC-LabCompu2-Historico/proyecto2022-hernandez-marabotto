@@ -5,7 +5,8 @@ class Carrito{
         if(e.target.classList.contains('agregar-carrito')){
             const producto = e.target.parentElement;
             this.leerDatosProducto(producto);
-            //console.log(producto);            
+
+            //console.log(producto);
         }
     }
 
@@ -195,9 +196,93 @@ class Carrito{
         igv = parseFloat(total * 0.18).toFixed(2);
         subtotal = parseFloat(total-igv).toFixed(2);
 
-        document.getElementById('subtotal').innerHTML = "S/. " + subtotal;
-        document.getElementById('igv').innerHTML = "S/. " + igv;
-        document.getElementById('total').value = "S/. " + total.toFixed(2);
+        document.getElementById('subtotal').innerHTML = "$" + subtotal;
+        document.getElementById('igv').innerHTML = "$" + igv;
+        document.getElementById('total').value = "$" + total.toFixed(2);
     }
-
 }
+
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var radio = canvas.height / 2;
+    ctx.translate(radio, radio);
+    radio = radio * 0.90;
+
+    setInterval(dibujarReloj, 1000);
+    setAlarm();
+
+    function setAlarm() {
+    setTimeout(function()
+    {
+        Swal.fire({
+            icon: 'info',
+            title: 'Alarma!',
+            text: 'Comprar antes que cambien los precios por el dolar',
+            timer: 2500,
+            showConfirmButton: false
+        });
+    }, 90000);
+}
+
+    function dibujarReloj() {
+    dibujarCara(ctx, radio);
+    dibujarNumeros(ctx, radio);
+    dibujarTiempo(ctx, radio);
+}
+
+    function dibujarCara(ctx, radio) {
+    ctx.beginPath();
+    ctx.arc(0, 0, radio, 0, 2 * Math.PI);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.strokeStyle = "blue";
+    ctx.stroke();
+}
+
+    function dibujarNumeros(ctx, radio) {
+    var angulo;
+    var num;
+    ctx.font = radio * 0.15 + `sans-serif`;
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    for (num = 1; num < 13; num++) {
+    angulo = num * Math.PI / 6;
+    ctx.rotate(angulo);
+    ctx.translate(0, -radio * 0.85);
+    ctx.rotate(-angulo);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(angulo);
+    ctx.translate(0, radio * 0.85);
+    ctx.rotate(-angulo);
+}
+}
+
+    function dibujarTiempo(ctx, radio) {
+    var ahora = new Date();
+    var hora = ahora.getHours();
+    var minuto = ahora.getMinutes();
+    var segundo = ahora.getSeconds();
+    //hora
+    hora = hora % 12;
+    hora = (hora * Math.PI / 6) + (minuto * Math.PI / (6 * 60)) + (segundo * Math.PI / (360 * 60));
+    dibujarManecilla(ctx, hora, radio * 0.5, radio * 0.07);
+    //minuto
+    minuto = (minuto * Math.PI / 30) + (segundo * Math.PI / (30 * 60));
+    dibujarManecilla(ctx, minuto, radio * 0.8, radio * 0.07);
+    // segundo
+    segundo = (segundo * Math.PI / 30);
+    dibujarManecilla(ctx, segundo, radio * 0.9, radio * 0.02);
+}
+    function dibujarManecilla(ctx, pos, longitud, ancho) {
+    ctx.beginPath();
+    ctx.lineWidth = ancho;
+    ctx.lineCap = "round";
+    ctx.moveTo(0, 0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -longitud);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+
+
+
