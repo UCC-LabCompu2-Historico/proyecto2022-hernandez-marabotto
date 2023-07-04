@@ -21,8 +21,6 @@ menu=$('.navigation ul');
     /**
      * Descripción de la función:
      * Esta función controla la apariencia del menú desplegable del carrito al hacer clic en un botón.
-     * @param {void} No recibe ningún parámetro.
-     * @return No hay valor de retorno explícito definido en la descripción de la función, pero controla la visibilidad del menú desplegable del carrito en la interfaz de usuario al hacer clic en el botón asociado.
      */
 var carritoMenuBtn=$('.car'),
 carritomenu=$('.dropdown-menu');
@@ -62,7 +60,6 @@ boton.addEventListener('click',function(){
  * La expresión regular utilizada comprueba si la dirección de correo tiene el formato correcto.
  * @function validarCorreo
  * @param {string} correo - La dirección de correo electrónico a validar.
- * @return No hay valor de retorno explícito definido en la descripción de la función. La función muestra un mensaje en la consola si la dirección de correo es válida, o muestra una alerta si la dirección de correo no es válida.
  */
 function validarCorreo(correo){
     var expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
