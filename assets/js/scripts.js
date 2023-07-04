@@ -58,7 +58,7 @@ boton.addEventListener('click',function(){
  * Descripción de la función:
  * Esta función valida la sintaxis de una dirección de correo electrónico utilizando una expresión regular.
  * La expresión regular utilizada comprueba si la dirección de correo tiene el formato correcto.
- * @function validarCorreo
+ * @method validarCorreo
  * @param {string} correo - La dirección de correo electrónico a validar.
  */
 function validarCorreo(correo){
@@ -77,7 +77,7 @@ function validarCorreo(correo){
  * Descripción de la función:
  * Esta función validar nombres y permite únicamente la entrada de letras (mayúsculas y minúsculas, incluidas las letras acentuadas) y algunos caracteres especiales en un campo de texto.
  * Cualquier otro carácter ingresado será bloqueado y no se mostrará en el campo de texto.
- * @function sololetras
+ * @method sololetras
  * @param {Event} e - El objeto Event que representa el evento de teclado.
  * @return {boolean} La función devuelve `false` si el carácter ingresado no es una letra válida o un carácter especial permitido, lo que evita que se muestre en el campo de texto.
  *Devuelve `true` si el carácter es válido y debe permitirse.
