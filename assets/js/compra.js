@@ -14,7 +14,13 @@ function cargarEventos(){
     procesarCompraBtn.addEventListener('click', procesarCompra);
 }
 
-function procesarCompra(e){
+/**
+ * Procesa la compra realizada por el cliente.
+ * @function procesarCompra
+ * @param {Event} e - El evento que desencadenó la función.
+ * @return {void} No retorna ningún valor explícito.
+ */
+ function procesarCompra(e){
     //e.preventDefault();
     if(compra.obtenerProductosLocalStorage().length === 0){
         Swal.fire({

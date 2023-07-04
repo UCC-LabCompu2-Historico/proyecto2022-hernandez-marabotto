@@ -1,6 +1,14 @@
 jQuery('document').ready(function($){
 
-//menu
+    /**
+     * Descripción de la función:
+     * Esta función controla la apariencia del menú desplegable al hacer clic en un botón.
+     * Cuando el botón es clicado, la función verifica si el menú tiene la clase 'show'.
+     * Si tiene la clase 'show', se la elimina, ocultando el menú. Si no tiene la clase 'show', se la agrega, haciendo que el menú sea visible en la interfaz de usuario.
+     * @function Menu
+     * @param {void} No recibe ningún parámetro.
+     * @return No hay valor de retorno explícito definido en la descripción de la función, pero controla la visibilidad del menú desplegable en la interfaz de usuario al hacer clic en el botón asociado.
+     */
 var menuBtn=$('.menu-icon'),
 menu=$('.navigation ul');
 
@@ -12,7 +20,12 @@ menu=$('.navigation ul');
         }
     });
 
-//carrito-menu
+    /**
+     * Descripción de la función:
+     * Esta función controla la apariencia del menú desplegable del carrito al hacer clic en un botón.
+     * @param {void} No recibe ningún parámetro.
+     * @return No hay valor de retorno explícito definido en la descripción de la función, pero controla la visibilidad del menú desplegable del carrito en la interfaz de usuario al hacer clic en el botón asociado.
+     */
 var carritoMenuBtn=$('.car'),
 carritomenu=$('.dropdown-menu');
 
@@ -45,7 +58,14 @@ boton.addEventListener('click',function(){
 });
 
 
-//validar correo
+/**
+ * Descripción de la función:
+ * Esta función valida la sintaxis de una dirección de correo electrónico utilizando una expresión regular.
+ * La expresión regular utilizada comprueba si la dirección de correo tiene el formato correcto.
+ * @function validarCorreo
+ * @param {string} correo - La dirección de correo electrónico a validar.
+ * @return No hay valor de retorno explícito definido en la descripción de la función. La función muestra un mensaje en la consola si la dirección de correo es válida, o muestra una alerta si la dirección de correo no es válida.
+ */
 function validarCorreo(correo){
     var expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
     var esValido = expReg.test(correo);
@@ -57,7 +77,16 @@ function validarCorreo(correo){
     }
 }
 
-//validar nombres
+
+/**
+ * Descripción de la función:
+ * Esta función validar nombres y permite únicamente la entrada de letras (mayúsculas y minúsculas, incluidas las letras acentuadas) y algunos caracteres especiales en un campo de texto.
+ * Cualquier otro carácter ingresado será bloqueado y no se mostrará en el campo de texto.
+ * @function sololetras
+ * @param {Event} e - El objeto Event que representa el evento de teclado.
+ * @return {boolean} La función devuelve `false` si el carácter ingresado no es una letra válida o un carácter especial permitido, lo que evita que se muestre en el campo de texto.
+ *Devuelve `true` si el carácter es válido y debe permitirse.
+ */
 function sololetras(e){
     key = e.keyCode || e.which;
     teclado = String.fromCharCode(key).toLowerCase();
@@ -73,7 +102,14 @@ function sololetras(e){
     }
 }
 
-//validar numeros
+/**
+ * Descripción de la función:
+ * Esta función valida numeros y permite únicamente la entrada de números en un campo de texto.
+ * @function solonumeros
+ * @param {Event} e - El objeto Event que representa el evento de teclado.
+ * @return {boolean} La función devuelve `false` si el carácter ingresado no es un número válido o un carácter especial permitido, lo que evita que se muestre en el campo de texto.
+ * Devuelve `true` si el carácter es un número válido y debe permitirse.
+ */
 function solonumeros(e){
     key = e.keyCode || e.which;
     teclado = String.fromCharCode(key).toLowerCase();
@@ -90,7 +126,13 @@ function solonumeros(e){
 }
 
 
-//validar formulario-contacto
+/**
+ * Descripción de la función:
+ * La función `validar` se utiliza para validar un formulario que contiene los siguientes campos: nombre, correo, celular y mensaje.
+ * Verifica si todos los campos son obligatorios, si el correo es válido, si el celular tiene una longitud adecuada y si es un número válido.
+ * @function valida
+ * @return {boolean} La función devuelve `false` si alguna de las validaciones falla, lo que impide que se envíe el formulario. Devuelve `true` si todas las validaciones son correctas y el formulario puede ser enviado.
+ */
 function validar(){
     let nombre = document.getElementById("nombre").value;
     let correo = document.getElementById("correo").value;
@@ -210,6 +252,12 @@ function validar(){
 },
 });
 
+/**
+ * Descripción de la función:
+ * La función `draw` se utiliza para dibujar un patrón de rectángulos de diferentes colores en un elemento canvas HTML.
+ * @function draw
+ * @returns {void} No retorna ningún valor.
+ */
 function draw() {
     var canvas = document.getElementById("canvas");
     if (canvas.getContext) {

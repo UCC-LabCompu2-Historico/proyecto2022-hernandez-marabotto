@@ -1,5 +1,12 @@
 class Carrito{
-    //Añadir el producto al carrito
+    /**
+     Añade el producto al carrito de compras.
+     @method comprarProducto
+     @param {string} ParámetroA - Representa el evento 'e' generado al intentar agregar un producto al carrito.
+     @param {number} ParámetroB - Representa un valor numérico, pero no se especifica su función en el contexto del método.
+     @return No hay valor de retorno explícito definido en la descripción de la función.
+     */
+
     comprarProducto(e){
         e.preventDefault();
         if(e.target.classList.contains('agregar-carrito')){
@@ -9,6 +16,13 @@ class Carrito{
             //console.log(producto);
         }
     }
+
+    /**
+     * Lee los datos del producto seleccionado y decide si agregarlo al carrito de compras o mostrar una advertencia.
+     * @method leerDatosProducto
+     * @param {Element} producto - El elemento HTML del producto seleccionado, que contiene información como imagen, título, precio e identificador.
+     * @return No hay valor de retorno explícito definido en la descripción de la función, pero puede actualizar el estado interno del carrito de compras.
+     */
 
     leerDatosProducto(producto){
         const infoProducto ={
@@ -47,6 +61,13 @@ class Carrito{
         
     }
 
+    /**
+     * Inserta un producto en el carrito de compras y lo muestra en la interfaz.
+     * @method insertarCarrito
+     * @param {Object} producto - Un objeto que contiene la información del producto a agregar al carrito, incluyendo la imagen, título, precio e identificador.
+     * @return No hay valor de retorno explícito definido en la descripción de la función, pero actualiza el carrito en la interfaz y en el almacenamiento local.
+     */
+
     insertarCarrito(producto){
         const row = document.createElement('tr');
         row.innerHTML= `
@@ -62,6 +83,13 @@ class Carrito{
         listaProductos.appendChild(row);
         this.guardarProductosLocalStorage(producto);
     }
+
+    /**
+     * Elimina un producto del carrito de compras y actualiza la interfaz y el almacenamiento local.
+     * @method eliminarProducto
+     * @param {Event} e - El evento 'e' generado al intentar eliminar un producto del carrito.
+     * @return No hay valor de retorno explícito definido en la descripción de la función, pero actualiza el carrito en la interfaz y el almacenamiento local, y recalcula el total del carrito.
+     */
 
     eliminarProducto(e){
         e.preventDefault();
@@ -81,6 +109,12 @@ class Carrito{
         this.calcularTotal();        
     }
 
+    /**
+     * Vacía completamente el carrito de compras, eliminando todos los productos de la interfaz y el almacenamiento local.
+     * @method vaciarCarrito
+     * @param {Event} e - El evento 'e' generado al intentar vaciar el carrito.
+     * @return {boolean} Devuelve false para evitar que el evento se propague o cause un comportamiento no deseado.
+     */
     vaciarCarrito(e){
         e.preventDefault();
         while(listaProductos.firstChild){
@@ -96,6 +130,13 @@ class Carrito{
         return false;
     }
 
+    /**
+     * Guarda el producto proporcionado en el almacenamiento local del navegador.
+     * @method guardarProductosLocalStorage
+     * @param {Object} producto - Un objeto que contiene la información del producto a guardar en el almacenamiento local.
+     * @return No hay valor de retorno explícito definido en la descripción de la función, pero almacena el producto en el almacenamiento local.
+     */
+
     guardarProductosLocalStorage(producto){
         let productos;
         productos = this.obtenerProductosLocalStorage();
@@ -103,6 +144,11 @@ class Carrito{
         localStorage.setItem('productos', JSON.stringify(productos));
     }
 
+    /**
+     * Obtiene la lista de productos almacenados en el almacenamiento local del navegador.
+     * @method obtenerProductosLocalStorage
+     * @return {Array} Una lista de productos obtenida del almacenamiento local o una lista vacía si no hay productos almacenados.
+     */
     obtenerProductosLocalStorage(){
         let productoLS;
         if(localStorage.getItem('productos')===null){
@@ -114,6 +160,13 @@ class Carrito{
         return productoLS;
     }
 
+    /**
+     * Elimina el producto con el ID proporcionado del almacenamiento local del navegador.
+     * @method eliminarProductoLocalStorage
+     * @param {string} productoID - El ID del producto que se va a eliminar del almacenamiento local.
+     * @return No hay valor de retorno explícito definido en la descripción de la función, pero actualiza el almacenamiento local al eliminar el producto.
+     */
+
     eliminarProductoLocalStorage(productoID){
         let productosLS;
         productosLS = this.obtenerProductosLocalStorage();
@@ -124,6 +177,12 @@ class Carrito{
         });
         localStorage.setItem('productos', JSON.stringify(productosLS));
     }
+
+    /**
+     * Lee los productos almacenados en el almacenamiento local y los muestra en la interfaz del carrito.
+     * @method leerLocalStorage
+     * @return No hay valor de retorno explícito definido en la descripción de la función, pero muestra los productos en la interfaz del carrito.
+     */
 
     leerLocalStorage(){
         let productosLS;
@@ -144,6 +203,11 @@ class Carrito{
         });
     }
 
+    /**
+     * Lee los productos almacenados en el almacenamiento local y muestra la lista de compra con los productos y sus cantidades.
+     * @method leerLocalStorageCompra
+     * @return No hay valor de retorno explícito definido en la descripción de la función, pero muestra los productos y sus cantidades en la lista de compra.
+     */
     leerLocalStorageCompra(){
         let productosLS;
         productosLS = this.obtenerProductosLocalStorage();
@@ -163,11 +227,24 @@ class Carrito{
             `;
             listaCompra.appendChild(row);
         });
-    }    
+    }
+
+    /**
+     * Vacía completamente el almacenamiento local, eliminando todos los datos almacenados en el carrito y la lista de compra.
+     * @method vaciarLocalStorage
+     * @return No hay valor de retorno explícito definido en la descripción de la función, pero vacía completamente el almacenamiento local.
+     */
 
     vaciarLocalStorage(){
         localStorage.clear();        
     }
+
+    /**
+     * Procesa el pedido del usuario, redirigiéndolo a la página de carrito si hay productos en el carrito, o muestra un mensaje de error si el carrito está vacío.
+     * @method procesarPedido
+     * @param {Event} e - El evento click que desencadena la función.
+     * @return No hay valor de retorno explícito definido en la descripción de la función. La función redirige a la página de carrito si hay productos en el carrito o muestra un mensaje de error si el carrito está vacío.
+     */
 
     procesarPedido(e){
         e.preventDefault();
@@ -184,6 +261,12 @@ class Carrito{
             location.href="carrito.html";
         }
     }
+
+    /**
+     * Calcula el subtotal, el impuesto IGV y el total de la compra basado en los productos y sus cantidades almacenados en el almacenamiento local.
+     * @method calcularTotal
+     * @return No hay valor de retorno explícito definido en la descripción de la función, pero muestra los valores del subtotal, IGV y total en la interfaz de usuario.
+     */
 
     calcularTotal(){
         let productoLS;
@@ -211,6 +294,13 @@ class Carrito{
     setInterval(dibujarReloj, 1000);
     setAlarm();
 
+/**
+ * Establece una alarma para mostrar un mensaje de advertencia después de un período de tiempo determinado.
+ * @function setAlarm
+ * @param {void} No recibe ningún parámetro.
+ * @return {void} No retorna ningún valor explícito.
+ *
+ */
     function setAlarm() {
     setTimeout(function()
     {
@@ -224,12 +314,37 @@ class Carrito{
     }, 90000);
 }
 
+/**
+ * Dibuja un reloj analógico en un lienzo (canvas) utilizando el contexto 2D.
+ *
+ * @function dibujarReloj
+ * @param {void} No recibe ningún parámetro.
+ * @return {void} No retorna ningún valor explícito.
+ *
+ * La función `dibujarReloj` combina varias funciones auxiliares para dibujar un reloj analógico en un lienzo.
+ * Primero, llama a la función `dibujarCara(ctx, radio)` para dibujar el círculo que representa la cara del reloj.
+ * Luego, invoca la función `dibujarNumeros(ctx, radio)` para dibujar los números de las horas alrededor del reloj.
+ * Finalmente, utiliza la función `dibujarTiempo(ctx, radio)` para dibujar las manecillas de las horas, minutos y segundos,
+ * mostrando así la hora actual del sistema en el reloj analógico.
+ */
     function dibujarReloj() {
     dibujarCara(ctx, radio);
     dibujarNumeros(ctx, radio);
     dibujarTiempo(ctx, radio);
 }
 
+/**
+ * Dibuja la cara del reloj analógico en un lienzo (canvas) utilizando el contexto 2D.
+ *
+ * @function dibujarCara
+ * @param {CanvasRenderingContext2D} ctx - El contexto 2D del lienzo en el que se dibujará la cara del reloj.
+ * @param {number} radio - El radio del círculo que representa la cara del reloj.
+ * @return {void} No retorna ningún valor explícito.
+ *
+ * La función `dibujarCara` utiliza el contexto 2D proporcionado para dibujar un círculo que representa la cara del reloj.
+ * El centro del círculo se coloca en las coordenadas (0, 0) del lienzo. El radio del círculo es igual al valor del parámetro `radio`.
+ * Esto resulta en un círculo blanco con un borde azul, que representa la cara del reloj.
+ */
     function dibujarCara(ctx, radio) {
     ctx.beginPath();
     ctx.arc(0, 0, radio, 0, 2 * Math.PI);
@@ -256,8 +371,16 @@ class Carrito{
     ctx.rotate(-angulo);
 }
 }
+/**
+ * Dibuja las manecillas del reloj analógico (horas, minutos y segundos) en un lienzo (canvas) utilizando el contexto 2D.
+ *
+ * @function dibujarTiempo
+ * @param {CanvasRenderingContext2D} ctx - El contexto 2D del lienzo en el que se dibujarán las manecillas.
+ * @param {number} radio - El radio del círculo que representa la cara del reloj.
+ * @return {void} No retorna ningún valor explícito.
+ */
 
-    function dibujarTiempo(ctx, radio) {
+ function dibujarTiempo(ctx, radio) {
     var ahora = new Date();
     var hora = ahora.getHours();
     var minuto = ahora.getMinutes();
@@ -273,6 +396,18 @@ class Carrito{
     segundo = (segundo * Math.PI / 30);
     dibujarManecilla(ctx, segundo, radio * 0.9, radio * 0.02);
 }
+
+/**
+ * Dibuja una manecilla del reloj analógico en un lienzo (canvas) utilizando el contexto 2D.
+ *
+ * @function dibujarManecilla
+ * @param {CanvasRenderingContext2D} ctx - El contexto 2D del lienzo en el que se dibujará la manecilla.
+ * @param {number} pos - El ángulo en radianes donde se posicionará la manecilla.
+ * @param {number} longitud - La longitud de la manecilla.
+ * @param {number} ancho - El ancho de la manecilla.
+ * @return {void} No retorna ningún valor explícito.
+ */
+
     function dibujarManecilla(ctx, pos, longitud, ancho) {
     ctx.beginPath();
     ctx.lineWidth = ancho;
