@@ -6,7 +6,11 @@ const cliente = document.getElementById('cliente');
 const correo = document.getElementById('correo');
 
 cargarEventos();
-
+/**
+ * Descripción de la función:
+ * La función `cargarEventos` se utiliza para cargar los eventos y acciones necesarias cuando el DOM está completamente cargado.
+ * @method cargarEventos
+ */
 function cargarEventos(){
     document.addEventListener('DOMContentLoaded', compra.leerLocalStorageCompra());
     carrito2.addEventListener('click', (e)=>{compra.eliminarProducto(e)});
@@ -16,9 +20,8 @@ function cargarEventos(){
 
 /**
  * Procesa la compra realizada por el cliente.
- * @function procesarCompra
+ * @method procesarCompra
  * @param {Event} e - El evento que desencadenó la función.
- * @return {void} No retorna ningún valor explícito.
  */
  function procesarCompra(e){
     //e.preventDefault();

@@ -1,10 +1,8 @@
 class Carrito{
     /**
-     Añade el producto al carrito de compras.
-     @method comprarProducto
-     @param {string} ParámetroA - Representa el evento 'e' generado al intentar agregar un producto al carrito.
-     @param {number} ParámetroB - Representa un valor numérico, pero no se especifica su función en el contexto del método.
-     @return No hay valor de retorno explícito definido en la descripción de la función.
+     *Añade el producto al carrito de compras.
+     *@method comprarProducto
+     *@param {Event} e - Objeto de evento del evento que desencadenó la función.
      */
 
     comprarProducto(e){
@@ -21,7 +19,6 @@ class Carrito{
      * Lee los datos del producto seleccionado y decide si agregarlo al carrito de compras o mostrar una advertencia.
      * @method leerDatosProducto
      * @param {Element} producto - El elemento HTML del producto seleccionado, que contiene información como imagen, título, precio e identificador.
-     * @return No hay valor de retorno explícito definido en la descripción de la función, pero puede actualizar el estado interno del carrito de compras.
      */
 
     leerDatosProducto(producto){
@@ -65,7 +62,6 @@ class Carrito{
      * Inserta un producto en el carrito de compras y lo muestra en la interfaz.
      * @method insertarCarrito
      * @param {Object} producto - Un objeto que contiene la información del producto a agregar al carrito, incluyendo la imagen, título, precio e identificador.
-     * @return No hay valor de retorno explícito definido en la descripción de la función, pero actualiza el carrito en la interfaz y en el almacenamiento local.
      */
 
     insertarCarrito(producto){
@@ -88,7 +84,6 @@ class Carrito{
      * Elimina un producto del carrito de compras y actualiza la interfaz y el almacenamiento local.
      * @method eliminarProducto
      * @param {Event} e - El evento 'e' generado al intentar eliminar un producto del carrito.
-     * @return No hay valor de retorno explícito definido en la descripción de la función, pero actualiza el carrito en la interfaz y el almacenamiento local, y recalcula el total del carrito.
      */
 
     eliminarProducto(e){
@@ -134,7 +129,6 @@ class Carrito{
      * Guarda el producto proporcionado en el almacenamiento local del navegador.
      * @method guardarProductosLocalStorage
      * @param {Object} producto - Un objeto que contiene la información del producto a guardar en el almacenamiento local.
-     * @return No hay valor de retorno explícito definido en la descripción de la función, pero almacena el producto en el almacenamiento local.
      */
 
     guardarProductosLocalStorage(producto){
@@ -164,7 +158,6 @@ class Carrito{
      * Elimina el producto con el ID proporcionado del almacenamiento local del navegador.
      * @method eliminarProductoLocalStorage
      * @param {string} productoID - El ID del producto que se va a eliminar del almacenamiento local.
-     * @return No hay valor de retorno explícito definido en la descripción de la función, pero actualiza el almacenamiento local al eliminar el producto.
      */
 
     eliminarProductoLocalStorage(productoID){
@@ -181,7 +174,6 @@ class Carrito{
     /**
      * Lee los productos almacenados en el almacenamiento local y los muestra en la interfaz del carrito.
      * @method leerLocalStorage
-     * @return No hay valor de retorno explícito definido en la descripción de la función, pero muestra los productos en la interfaz del carrito.
      */
 
     leerLocalStorage(){
@@ -206,7 +198,6 @@ class Carrito{
     /**
      * Lee los productos almacenados en el almacenamiento local y muestra la lista de compra con los productos y sus cantidades.
      * @method leerLocalStorageCompra
-     * @return No hay valor de retorno explícito definido en la descripción de la función, pero muestra los productos y sus cantidades en la lista de compra.
      */
     leerLocalStorageCompra(){
         let productosLS;
@@ -243,7 +234,6 @@ class Carrito{
      * Procesa el pedido del usuario, redirigiéndolo a la página de carrito si hay productos en el carrito, o muestra un mensaje de error si el carrito está vacío.
      * @method procesarPedido
      * @param {Event} e - El evento click que desencadena la función.
-     * @return No hay valor de retorno explícito definido en la descripción de la función. La función redirige a la página de carrito si hay productos en el carrito o muestra un mensaje de error si el carrito está vacío.
      */
 
     procesarPedido(e){
@@ -265,7 +255,6 @@ class Carrito{
     /**
      * Calcula el subtotal, el impuesto IGV y el total de la compra basado en los productos y sus cantidades almacenados en el almacenamiento local.
      * @method calcularTotal
-     * @return No hay valor de retorno explícito definido en la descripción de la función, pero muestra los valores del subtotal, IGV y total en la interfaz de usuario.
      */
 
     calcularTotal(){
@@ -296,7 +285,7 @@ class Carrito{
 
 /**
  * Establece una alarma para mostrar un mensaje de advertencia después de un período de tiempo determinado.
- * @function setAlarm
+ * @method setAlarm
  * @param {void} No recibe ningún parámetro.
  * @return {void} No retorna ningún valor explícito.
  *
@@ -336,11 +325,10 @@ class Carrito{
 /**
  * Dibuja la cara del reloj analógico en un lienzo (canvas) utilizando el contexto 2D.
  *
- * @function dibujarCara
+ * @method dibujarCara
  * @param {CanvasRenderingContext2D} ctx - El contexto 2D del lienzo en el que se dibujará la cara del reloj.
  * @param {number} radio - El radio del círculo que representa la cara del reloj.
- * @return {void} No retorna ningún valor explícito.
- *
+
  * La función `dibujarCara` utiliza el contexto 2D proporcionado para dibujar un círculo que representa la cara del reloj.
  * El centro del círculo se coloca en las coordenadas (0, 0) del lienzo. El radio del círculo es igual al valor del parámetro `radio`.
  * Esto resulta en un círculo blanco con un borde azul, que representa la cara del reloj.
@@ -354,6 +342,13 @@ class Carrito{
     ctx.stroke();
 }
 
+/**
+ * Descripción de la función:
+ * La función `dibujarNumeros` se utiliza para dibujar los números del 1 al 12 alrededor de un círculo en un elemento canvas utilizando el contexto 2D.
+ * @method dibujarNumeros
+ * @param {CanvasRenderingContext2D} ctx - El contexto 2D del elemento canvas en el que se dibujarán los números.
+ * @param {number} radio - El radio del círculo donde se colocarán los números.
+ */
     function dibujarNumeros(ctx, radio) {
     var angulo;
     var num;
@@ -374,10 +369,9 @@ class Carrito{
 /**
  * Dibuja las manecillas del reloj analógico (horas, minutos y segundos) en un lienzo (canvas) utilizando el contexto 2D.
  *
- * @function dibujarTiempo
+ * @method dibujarTiempo
  * @param {CanvasRenderingContext2D} ctx - El contexto 2D del lienzo en el que se dibujarán las manecillas.
  * @param {number} radio - El radio del círculo que representa la cara del reloj.
- * @return {void} No retorna ningún valor explícito.
  */
 
  function dibujarTiempo(ctx, radio) {
@@ -400,12 +394,11 @@ class Carrito{
 /**
  * Dibuja una manecilla del reloj analógico en un lienzo (canvas) utilizando el contexto 2D.
  *
- * @function dibujarManecilla
+ * @method dibujarManecilla
  * @param {CanvasRenderingContext2D} ctx - El contexto 2D del lienzo en el que se dibujará la manecilla.
  * @param {number} pos - El ángulo en radianes donde se posicionará la manecilla.
  * @param {number} longitud - La longitud de la manecilla.
  * @param {number} ancho - El ancho de la manecilla.
- * @return {void} No retorna ningún valor explícito.
  */
 
     function dibujarManecilla(ctx, pos, longitud, ancho) {

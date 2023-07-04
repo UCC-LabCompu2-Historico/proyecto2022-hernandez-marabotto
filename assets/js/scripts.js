@@ -5,9 +5,7 @@ jQuery('document').ready(function($){
      * Esta función controla la apariencia del menú desplegable al hacer clic en un botón.
      * Cuando el botón es clicado, la función verifica si el menú tiene la clase 'show'.
      * Si tiene la clase 'show', se la elimina, ocultando el menú. Si no tiene la clase 'show', se la agrega, haciendo que el menú sea visible en la interfaz de usuario.
-     * @function Menu
-     * @param {void} No recibe ningún parámetro.
-     * @return No hay valor de retorno explícito definido en la descripción de la función, pero controla la visibilidad del menú desplegable en la interfaz de usuario al hacer clic en el botón asociado.
+     * @method Menu
      */
 var menuBtn=$('.menu-icon'),
 menu=$('.navigation ul');
@@ -105,7 +103,7 @@ function sololetras(e){
 /**
  * Descripción de la función:
  * Esta función valida numeros y permite únicamente la entrada de números en un campo de texto.
- * @function solonumeros
+ * @method solonumeros
  * @param {Event} e - El objeto Event que representa el evento de teclado.
  * @return {boolean} La función devuelve `false` si el carácter ingresado no es un número válido o un carácter especial permitido, lo que evita que se muestre en el campo de texto.
  * Devuelve `true` si el carácter es un número válido y debe permitirse.
@@ -130,7 +128,7 @@ function solonumeros(e){
  * Descripción de la función:
  * La función `validar` se utiliza para validar un formulario que contiene los siguientes campos: nombre, correo, celular y mensaje.
  * Verifica si todos los campos son obligatorios, si el correo es válido, si el celular tiene una longitud adecuada y si es un número válido.
- * @function valida
+ * @method valida
  * @return {boolean} La función devuelve `false` si alguna de las validaciones falla, lo que impide que se envíe el formulario. Devuelve `true` si todas las validaciones son correctas y el formulario puede ser enviado.
  */
 function validar(){
@@ -255,8 +253,7 @@ function validar(){
 /**
  * Descripción de la función:
  * La función `draw` se utiliza para dibujar un patrón de rectángulos de diferentes colores en un elemento canvas HTML.
- * @function draw
- * @returns {void} No retorna ningún valor.
+ * @method draw
  */
 function draw() {
     var canvas = document.getElementById("canvas");

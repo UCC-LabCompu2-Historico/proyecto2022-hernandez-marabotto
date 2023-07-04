@@ -12,10 +12,7 @@ cargarEventos();
  * Descripción de la función:
  * La función `cargarEventos` asigna controladores de eventos a los elementos relevantes de la interfaz de usuario para interactuar con el carrito de compras.
  * Estos eventos incluyen agregar productos al carrito, eliminar productos del carrito, vaciar el carrito de compras, leer los productos almacenados localmente al cargar la página y procesar el pedido de compra.
- * @function cargarEventos
- *
- * @param {void} No recibe ningún parámetro.
- * @return No hay valor de retorno explícito definido en la descripción de la función, pero configura la interacción del usuario con el carrito de compras en la interfaz de usuario.
+ * @method cargarEventos
  */
 function cargarEventos(){
     productos.addEventListener('click', (e)=>{carro.comprarProducto(e)});
