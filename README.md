@@ -12,7 +12,7 @@ Título:Tienda Virtual de Productos tecnologicos (MAX SHOP)
 |2104049@ucc.edu.ar|Simon H|
 
 - Tecnologías Usadas: HTML5, CSS3.
-- Link a gh pages: [MAXSHOP](https://ucc-labcompu2.github.io/proyecto2022-hernandez-marabotto/)
+- Link a gh pages: [MAXSHOP](https://ucc-labcompu2-historico.github.io/proyecto2022-hernandez-marabotto/)
 
 Contenido de la pagina: Es una tienda virtual,donde se puede encontrar variedad de productos para computadora.
 ## Requisitos del Primer Parcial
